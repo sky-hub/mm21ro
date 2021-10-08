@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Magento_Catalog::catalog_attribute_schedule" title="Save Custom Attribute" translate="title" module="Magento_Catalog" sortOrder="100" parent="Magento_Backend::stores_attributes" action="catalog/product_attribute/schedule" resource="Magento_Catalog::attributes_attributes"/>
+    </menu>
+</config>

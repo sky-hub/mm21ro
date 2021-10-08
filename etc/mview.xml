@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Mview/etc/mview.xsd">
+    <!-- Basic view having subscriptions to the eav_attribute_option_value table -->
+    <view id="attribute_option" class="ReverseSeven\MagentoIndexersDemo\Model\Indexer\Attribute" group="indexer">
+        <subscriptions>
+            <table name="eav_attribute_option_value" entity_column="option_id"/>
+        </subscriptions>
+    </view>
+
+    <!-- Basic view having subscriptions to the catalog_product_entity_decimal table -->
+    <view id="demo_price" class="ReverseSeven\MagentoIndexersDemo\Model\Indexer\Demo\Price" group="indexer">
+        <subscriptions>
+            <table name="catalog_product_entity_decimal" entity_column="entity_id"/>
+        </subscriptions>
+    </view>
+
+    <!-- Basic view without subscriptions -->
+    <view id="custom_attribute_option" class="ReverseSeven\MagentoIndexersDemo\Model\Indexer\Custom\Attribute" group="indexer"/>
+</config>

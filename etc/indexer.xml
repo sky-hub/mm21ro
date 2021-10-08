@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Indexer/etc/indexer.xsd">
+    <!-- Indexer used to demonstrate how an indexer can be used with subscriptions -->
+    <indexer id="attribute_option_indexer" view_id="attribute_option"
+             class="ReverseSeven\MagentoIndexersDemo\Model\Indexer\Attribute" shared_index="custom_indexer">
+        <title translate="true">Attribute Option Indexer</title>
+        <description translate="true">Index attribute data</description>
+    </indexer>
+
+    <!-- Indexer used to demonstrate how an indexer can be used without subscriptions -->
+    <indexer id="custom_attribute_option" view_id="custom_attribute_option"
+             class="ReverseSeven\MagentoIndexersDemo\Model\Indexer\Custom\Attribute" shared_index="custom_indexer">
+        <title translate="true">Custom Attribute Option Indexer</title>
+        <description translate="true">Index custom attribute data</description>
+    </indexer>
+
+    <!-- Indexer used to demonstrate how an indexer that saves value in the EAV tables affects other indexers -->
+    <indexer id="demo_price" view_id="demo_price"
+             class="ReverseSeven\MagentoIndexersDemo\Model\Indexer\Demo\Price" shared_index="demo_price">
+        <title translate="true">Demo Price Indexer</title>
+        <description translate="true">Index demo price</description>
+    </indexer>
+
+    <!-- Used to demonstrate how indexer dependencies work -->
+    <indexer id="catalogsearch_fulltext">
+        <dependencies>
+            <indexer id="attribute_option_indexer" />
+            <indexer id="custom_attribute_option" />
+        </dependencies>
+    </indexer>
+</config>
